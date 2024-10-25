@@ -12,7 +12,10 @@ st.markdown('Upload file from Amazon Sellercentral to obtain Sessions and Page V
 raw = st.file_uploader('Upload Amazon Sellercentral file', type = ['csv'])
 
 if raw is not None:
-    df = pd.read_csv(raw)
+    try:
+        df = pd.read_csv(raw)
+    except:
+        df = pd.read_csv(raw, encoding='latin-1')
     st.success('File uploaded successfully.')
 
 date = st.text_input('Insert date in the YYYY-MM-DD format, such as 2024-07-26.')
