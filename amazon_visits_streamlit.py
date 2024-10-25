@@ -15,7 +15,7 @@ if raw is not None:
     try:
         df = pd.read_csv(raw)
     except:
-        df = pd.read_csv(raw, encoding='latin-1')
+        df = pd.read_csv(raw, encoding = 'ISO-8859-1')
     st.success('File uploaded successfully.')
 
 date = st.text_input('Insert date in the YYYY-MM-DD format, such as 2024-07-26.')
