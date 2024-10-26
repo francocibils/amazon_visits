@@ -13,8 +13,10 @@ raw = st.file_uploader('Upload Amazon Sellercentral file', type = ['csv'])
 
 if raw is not None:
     try:
+        raw.seek(0)
         df = pd.read_csv(raw)
     except:
+        raw.seek(0)
         df = pd.read_csv(raw, encoding = 'ISO-8859-1')
     st.success('File uploaded successfully.')
 
