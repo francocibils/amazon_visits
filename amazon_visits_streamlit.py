@@ -37,7 +37,8 @@ if st.button('Process file'):
                               'Page Views - Total': 'Vistas de página - Total', 
                               '(Parent) ASIN': 'ASIN (parent)', 
                               'Title': 'Titulo', 
-                              'Total de sesiones': 'Sesiones - Total'})
+                              'Total de sesiones': 'Sesiones - Total', 
+                              'Total de visualizaciones de página': 'Vistas de página - Total'})
     df = df.drop_duplicates(['ASIN (parent)', 'Date', 'Sesiones - Total'])
 
     # Catalog
