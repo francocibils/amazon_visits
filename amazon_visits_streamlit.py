@@ -33,7 +33,11 @@ if st.button('Process file'):
     # Process dataframe
     df['Date'] = date
     df['Date'] = pd.to_datetime(df['Date'])
-    df = df.rename(columns = {'Sessions - Total': 'Sesiones - Total', 'Page Views - Total': 'Vistas de página - Total', '(Parent) ASIN': 'ASIN (parent)', 'Title': 'Titulo'})
+    df = df.rename(columns = {'Sessions - Total': 'Sesiones - Total', 
+                              'Page Views - Total': 'Vistas de página - Total', 
+                              '(Parent) ASIN': 'ASIN (parent)', 
+                              'Title': 'Titulo', 
+                              'Total de sesiones': 'Sesiones - Total'})
     df = df.drop_duplicates(['ASIN (parent)', 'Date', 'Sesiones - Total'])
 
     # Catalog
